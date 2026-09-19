@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>21 Nargusta Street — Roommate Splitter</title>
+  <meta name="description" content="Dashboard showing shared household expenses and balances for Nargusta Street apartment.">
+</head>
+<body>
+  <link rel="stylesheet" href="style.css">
+  <link href="index.js">
+ 
+  
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <p class="site-title">Roommate Splitter</p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html" aria-current="page">Dashboard</a></li>
+        <li><a href="add-expense.html">Add Expense</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="settle-up.html">Settle Up</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>Nargusta Street Apartment</h1>
+
+    <figure>
+      <img src="images/house.jpeg" alt="Photo of the Nargusta Street apartment building, gated entrance and covered carport" width="500" height="300">
+      <figcaption>4 roommates · Tracking expenses since <time datetime="2025-08-01">August 2025</time></figcaption>
+    </figure>
+
+    <section aria-labelledby="members-heading">
+      <h2 id="members-heading">Roommates</h2>
+      <ul class="member-list">
+        <li>
+          <img src="images/niara.jpeg" alt="" width="48" height="48">
+          Ni'ara
+        </li>
+        <li>
+          <img src="images/amber.jpeg" alt="" width="48" height="48">
+          Amber
+        </li>
+        <li>
+          <img src="images/arin.jpeg" alt="" width="48" height="48">
+          Arin
+        </li>
+        <li>
+          <img src="images/khiara.jpg" alt="" width="48" height="48">
+          Khiara
+        </li>
+      </ul>
+      <p><a href="add-expense.html">+ Add a roommate</a></p>
+    </section>
+
+    <section aria-labelledby="month-heading">
+      <h2 id="month-heading">This month: August 2026</h2>
+      <p>
+        <label for="month-select">Viewing</label>
+        <select id="month-select" name="month-select">
+          <option selected>August 2026</option>
+          <option>July 2026</option>
+          <option>June 2026</option>
+          <option>May 2026</option>
+          <option>April 2026</option>
+          <option>March 2026</option>
+          <option>February 2026</option>
+          <option>January 2026</option>
+        </select>
+      </p>
+      <p>Total household spending this month: <strong>$2,910.00</strong></p>
+
+      <table>
+        <caption>Balance summary for August 2026</caption>
+        <thead>
+          <tr>
+            <th scope="col">Roommate</th>
+            <th scope="col">Paid so far</th>
+            <th scope="col">Fair share</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Ni'ara</th>
+            <td>$2,440.00</td>
+            <td>$727.50</td>
+            <td>Is owed $1,712.50</td>
+          </tr>
+          <tr>
+            <th scope="row">Amber</th>
+            <td>$240.00</td>
+            <td>$727.50</td>
+            <td>Owes $487.50</td>
+          </tr>
+          <tr>
+            <th scope="row">Arin</th>
+            <td>$80.00</td>
+            <td>$727.50</td>
+            <td>Owes $647.50</td>
+          </tr>
+          <tr>
+            <th scope="row">Khiara</th>
+            <td>$150.00</td>
+            <td>$727.50</td>
+            <td>Owes $577.50</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><a href="settle-up.html">See the simplest way to settle up →</a></p>
+    </section>
+
+    <section aria-labelledby="recurring-heading">
+      <h2 id="recurring-heading">Recurring monthly bills</h2>
+      <table>
+        <caption>Bills that repeat automatically each month</caption>
+        <thead>
+          <tr>
+            <th scope="col">Bill</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Usually paid by</th>
+            <th scope="col">Split</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Rent</td>
+            <td>$2,400.00</td>
+            <td>Ni'ara</td>
+            <td>Equally among 4</td>
+          </tr>
+          <tr>
+            <td>Internet</td>
+            <td>$80.00</td>
+            <td>Arin</td>
+            <td>Equally among 4</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><a href="add-expense.html">Manage recurring bills →</a></p>
+    </section>
+
+    <section aria-labelledby="recent-heading">
+      <h2 id="recent-heading">Recent expenses</h2>
+      <table>
+        <caption>Last 3 expenses added this month</caption>
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Description</th>
+            <th scope="col">Paid by</th>
+            <th scope="col">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><time datetime="2026-03-05">Mar 5</time></td>
+            <td>Groceries — Kalgers</td>
+            <td>Khiara</td>
+            <td>$150.00</td>
+          </tr>
+          <tr>
+            <td><time datetime="2026-03-03">Mar 3</time></td>
+            <td>Electricity bill</td>
+            <td>Amber</td>
+            <td>$180.00</td>
+          </tr>
+          <tr>
+            <td><time datetime="2026-03-02">Mar 2</time></td>
+            <td>Cleaning supplies</td>
+            <td>Ni'ara</td>
+            <td>$40.00</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><a href="history.html">View full history →</a></p>
+    </section>
+
+    <p>
+      <a href="add-expense.html" class="button-link">+ Add new expense</a>
+    </p>
+  </main>
+
+  <footer>
+    <p>Roommate Splitter — a wireframe, not a working app yet.</p>
+  </footer>
+
+</body>
+</html>

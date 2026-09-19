@@ -1,0 +1,13 @@
+schema: "classroom50/repo-config/v1"
+classroom: "cmps3141-hci-26s1"
+assignment: "as-3"
+secret: "yq29hsh8ubhci"
+owner:
+  username: "amber-bobby"
+  id: 119124736
+  accepted_at: "2026-09-02T00:09:44Z"
+source:
+  owner: "UB-CMPS3141"
+  owner_id: 106170909
+  repo: "as3-css_app"
+  branch: "main"

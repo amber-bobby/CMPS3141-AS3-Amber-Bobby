@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settle Up — Roommate Splitter</title>
+  <meta name="description" content="Suggested payments to settle all balances among Nargusta Street roommates.">
+</head>
+<body>
+  <link rel="stylesheet" href="style.css">
+  <link rel="js" href="index.js">
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <p class="site-title">Roommate Splitter</p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="add-expense.html">Add Expense</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="settle-up.html" aria-current="page">Settle Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>Settle Up</h1>
+    <p>
+      Here's the smallest number of payments needed to bring everyone's
+      August balance to zero. You don't need one payment per bill, just
+      these three.
+    </p>
+
+    <ol class="settle-list">
+      <li>
+        <p>
+          <img src="images/arin.jpeg" alt="" width="28" height="28">
+          Arin pays
+          <img src="images/niara.jpeg" alt="" width="28" height="28">
+          Ni'ara
+          <strong>$647.50</strong>
+        </p>
+        <p>
+          <label for="mark-1">
+            <input type="checkbox" id="mark-1" name="mark-settled">
+            Mark as paid
+          </label>
+        </p>
+      </li>
+      <li>
+        <p>
+          <img src="images/khiara.jpg" alt="" width="28" height="28">
+          Khiara pays
+          <img src="images/niara.jpeg" alt="" width="28" height="28">
+          Ni'ara
+          <strong>$577.50</strong>
+        </p>
+        <p>
+          <label for="mark-2">
+            <input type="checkbox" id="mark-2" name="mark-settled">
+            Mark as paid
+          </label>
+        </p>
+      </li>
+      <li>
+        <p>
+          <img src="images/amber.jpeg" alt="" width="28" height="28">
+          Amber pays
+          <img src="images/niara.jpeg" alt="" width="28" height="28">
+          Ni'ara
+          <strong>$487.50</strong>
+        </p>
+        <p>
+          <label for="mark-3">
+            <input type="checkbox" id="mark-3" name="mark-settled">
+            Mark as paid
+          </label>
+        </p>
+      </li>
+    </ol>
+
+    <form>
+      <fieldset>
+        <legend>Record a settlement payment</legend>
+        <p>
+          <label for="settle-from">From</label><br>
+          <select id="settle-from" name="settle-from">
+            <option>Arin</option>
+            <option selected>Khiara</option>
+            <option>Amber</option>
+          </select>
+        </p>
+        <p>
+          <label for="settle-to">To</label><br>
+          <select id="settle-to" name="settle-to">
+            <option selected>Ni'ara</option>
+          </select>
+        </p>
+        <p>
+          <label for="settle-amount">Amount</label><br>
+          <input type="number" id="settle-amount" name="settle-amount" min="0" step="0.01" value="577.50">
+        </p>
+        <p>
+          <label for="settle-method">How was it paid?</label><br>
+          <select id="settle-method" name="settle-method">
+            <option selected>other</option>
+            <option>Cash</option>
+            <option>Bank transfer</option>
+          </select>
+        </p>
+        <p>
+          <button type="submit">Confirm settlement</button>
+        </p>
+      </fieldset>
+    </form>
+  </main>
+
+  <footer>
+    <p>Roommate Splitter — a wireframe, not a working app yet.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History — Roommate Splitter</title>
+  <meta name="description" content="Full history of shared household expenses for Nargusta Street apartment.">
+</head>
+<body>
+  <link rel="stylesheet" href="style.css">
+  <link rel="js" href="index.js">
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <p class="site-title">Roommate Splitter</p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="add-expense.html">Add Expense</a></li>
+        <li><a href="history.html" aria-current="page">History</a></li>
+        <li><a href="settle-up.html">Settle Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>Expense History</h1>
+    <p>Nargusta Street Apartment · 6 expenses logged in August 2026</p>
+
+    <form aria-label="Filter history">
+      <p>
+        <label for="filter-month">Month</label>
+        <select id="filter-month" name="filter-month">
+          <option selected>August 2026</option>
+          <option>July 2026</option>
+          <option>June 2026</option>
+          <option>May 2026</option>
+          <option>April 2026</option>
+          <option>March 2026</option>
+          <option>February 2026</option>
+          <option>January 2026</option>
+          <option>All time</option>
+        </select>
+
+        <label for="filter-person">Paid by</label>
+        <select id="filter-person" name="filter-person">
+          <option selected>Everyone</option>
+          <option>Ni'ara</option>
+          <option>Amber</option>
+          <option>Arin</option>
+          <option>Khiara</option>
+        </select>
+
+        <label for="filter-category">Category</label>
+        <select id="filter-category" name="filter-category">
+          <option selected>All categories</option>
+          <option>Rent</option>
+          <option>Utilities</option>
+          <option>Groceries</option>
+          <option>Household supplies</option>
+        </select>
+
+        <button type="submit">Apply filters</button>
+      </p>
+    </form>
+
+    <table>
+      <caption>All logged expenses, most recent first</caption>
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Description</th>
+          <th scope="col">Category</th>
+          <th scope="col">Paid by</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Split among</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><time datetime="2026-03-05">Aug 5</time></td>
+          <td>Groceries — Kalgers</td>
+          <td>Groceries</td>
+          <td>Khiara</td>
+          <td>$150.00</td>
+          <td>All 4</td>
+          <td>
+            <a href="add-expense.html">Edit</a> ·
+            <button type="button">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td><time datetime="2026-03-03">Aug 3</time></td>
+          <td>Electricity bill (recurring)</td>
+          <td>Utilities</td>
+          <td>Amber</td>
+          <td>$180.00</td>
+          <td>All 4</td>
+          <td>
+            <a href="add-expense.html">Edit</a> ·
+            <button type="button">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td><time datetime="2026-03-02">Aug 2</time></td>
+          <td>Cleaning supplies</td>
+          <td>Household supplies</td>
+          <td>Ni'ara</td>
+          <td>$40.00</td>
+          <td>All 4</td>
+          <td>
+            <a href="add-expense.html">Edit</a> ·
+            <button type="button">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td><time datetime="2026-03-01">Aug 1</time></td>
+          <td>Water bill</td>
+          <td>Utilities</td>
+          <td>Amber</td>
+          <td>$60.00</td>
+          <td>All 4</td>
+          <td>
+            <a href="add-expense.html">Edit</a> ·
+            <button type="button">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td><time datetime="2026-03-01">Aug 1</time></td>
+          <td>Internet (recurring)</td>
+          <td>Utilities</td>
+          <td>Arin</td>
+          <td>$80.00</td>
+          <td>All 4</td>
+          <td>
+            <a href="add-expense.html">Edit</a> ·
+            <button type="button">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td><time datetime="2026-03-01">Aug 1</time></td>
+          <td>Rent (recurring)</td>
+          <td>Rent</td>
+          <td>Ni'ara</td>
+          <td>$2,400.00</td>
+          <td>All 4</td>
+          <td>
+            <a href="add-expense.html">Edit</a> ·
+            <button type="button">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th scope="row">Total</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>$2,910.00</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <p>
+      Every edit here is tracked — you can always see what an expense used to
+      say and who changed it, so nothing gets silently altered.
+    </p>
+  </main>
+
+  <footer>
+    <p>Roommate Splitter — a wireframe, not a working app yet.</p>
+  </footer>
+
+</body>
+</html>

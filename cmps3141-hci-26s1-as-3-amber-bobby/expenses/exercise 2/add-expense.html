@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Expense — Roommate Splitter</title>
+  <meta name="description" content="Form for adding a new shared household expense.">
+</head>
+
+<body>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="js" href="index.js">
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <p class="site-title">Roommate Splitter</p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="add-expense.html" aria-current="page">Add Expense</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="settle-up.html">Settle Up</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>Add an Expense</h1>
+    <p>Nargusta Street Apartment</p>
+
+    <form>
+      <fieldset>
+        <legend>What was it?</legend>
+
+        <p>
+          <label for="description">Description</label><br>
+          <input type="text" id="description" name="description" value="Electricity bill" required>
+        </p>
+
+        <p>
+          <label for="category">Category</label><br>
+          <select id="category" name="category">
+            <option>Rent</option>
+            <option selected>Utilities</option>
+            <option>Groceries</option>
+            <option>Household supplies</option>
+            <option>Furniture &amp; repairs</option>
+            <option>Other</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="amount">Amount</label><br>
+          <input type="number" id="amount" name="amount" min="0" step="0.01" value="180.00" required>
+        </p>
+
+        <p>
+          <label for="date">Date</label><br>
+          <input type="date" id="date" name="date" value="2026-03-03" required>
+        </p>
+
+        <p>
+          <input type="checkbox" id="recurring" name="recurring" checked>
+          <label for="recurring">This is a recurring monthly bill</label>
+        </p>
+
+        <p>
+          <label for="receipt">Receipt photo (optional)</label><br>
+          <input type="file" id="receipt" name="receipt" accept="image/*">
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Who paid?</legend>
+        <p>
+          <label for="paid-by">Paid by</label><br>
+          <select id="paid-by" name="paid-by" required>
+            <option>Ni'ara</option>
+            <option selected>Amber</option>
+            <option>Arin</option>
+            <option>Khiara</option>
+          </select>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>How should it be split?</legend>
+
+        <p>
+          <input type="radio" id="split-equal" name="split-method" value="equal" checked>
+          <label for="split-equal">Split equally among everyone selected below</label>
+        </p>
+        <p>
+          <input type="radio" id="split-custom" name="split-method" value="custom">
+          <label for="split-custom">Enter a custom amount for each person</label>
+        </p>
+        <p>
+          <input type="radio" id="split-percent" name="split-method" value="percent">
+          <label for="split-percent">Split by percentage</label>
+        </p>
+
+        <p>Who is this expense split between?</p>
+        <ul class="checkbox-list">
+          <li>
+            <input type="checkbox" id="split-maya" name="split-with" value="maya" checked>
+            <label for="split-maya">Ni'ara</label>
+          </li>
+          <li>
+            <input type="checkbox" id="split-diego" name="split-with" value="diego" checked>
+            <label for="split-diego">Amber</label>
+          </li>
+          <li>
+            <input type="checkbox" id="split-priya" name="split-with" value="priya" checked>
+            <label for="split-priya">Arin</label>
+          </li>
+          <li>
+            <input type="checkbox" id="split-chris" name="split-with" value="chris" checked>
+            <label for="split-chris">Khiara</label>
+          </li>
+        </ul>
+
+        <p>
+          Preview: this will add <strong>$45.00</strong> to what each of the
+          other 3 roommates owes Amber.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Notes (optional)</legend>
+        <p>
+          <label for="notes">Anything worth remembering about this expense?</label><br>
+          <textarea id="notes" name="notes" rows="3" cols="40">Bill covers July 15 &ndash; Aug 15 usage period.</textarea>
+        </p>
+      </fieldset>
+
+      <p>
+        <button type="submit">Save expense</button>
+        <a href="index.html">Cancel</a>
+      </p>
+    </form>
+  </main>
+
+  <footer>
+    <p>Roommate Splitter — a wireframe, not a working app yet.</p>
+  </footer>
+
+</body>
+</html>

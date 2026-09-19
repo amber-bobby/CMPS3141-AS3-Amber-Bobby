@@ -1,0 +1,100 @@
+/*
+CMPS3141-HCI - AS3-26S1
+Collaborators:
+Date: Sept.17.26
+*/
+
+:root{
+  --bg: #f8f6f2;
+  --surface: #ffffff;
+  --border: #e4ddd0;
+  --ink: #221d17;
+  --ink-dim: #6b6155;
+  --accent: #3557d6;
+  --code-bg: #221d17;
+  --code-ink: #f4f1eb;
+  --font: system-ui, sans-serif;
+  --mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+}
+
+*, *::before, *::after{ box-sizing: border-box; }
+
+body{
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+main{
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+h1{ font-size: 1.7rem; margin: 0 0 .5rem; }
+main > p:first-of-type{ color: var(--ink-dim); margin-top: 0; }
+
+nav{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0 3rem;
+}
+nav h2{ font-size: 1rem; margin: 0 0 .5rem; text-transform: uppercase; letter-spacing: .03em; color: var(--ink-dim); }
+nav ol{ margin: 0; padding-left: 1.2rem; }
+nav a{ color: var(--accent); text-decoration: none; }
+nav a:hover{ text-decoration: underline; }
+
+article{
+  border-top: 3px solid var(--border);
+  padding-top: 2rem;
+  margin-top: 3rem;
+}
+article h2{ font-size: 1.3rem; margin: 0 0 1rem; scroll-margin-top: 1rem; }
+article h3{ font-size: 1rem; margin: 1.5rem 0 .5rem; color: var(--ink-dim); text-transform: uppercase; letter-spacing: .03em; }
+
+pre{
+  background: var(--code-bg);
+  color: var(--code-ink);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  overflow-x: auto;
+  font-size: .85rem;
+}
+code{ font-family: var(--mono); }
+p code{
+  background: rgba(53,87,214,.08);
+  color: var(--accent);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: .85em;
+}
+
+figure{
+  display: inline-block;
+  width: 48%;
+  margin: 0 1% 1rem 0;
+  vertical-align: top;
+}
+figure img{
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  display: block;
+}
+figcaption{
+  text-align: center;
+  font-size: .85rem;
+  color: var(--ink-dim);
+  margin-top: 4px;
+}
+
+em{ color: #c94a3f; }
+
+@media (max-width: 600px){
+  figure{ width: 100%; margin-right: 0; }
+}

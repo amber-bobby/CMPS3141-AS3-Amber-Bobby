@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fix the Web with CSS!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Fixing the Web with CSS</h1>
+      <p>
+        Three usability improvements made purely with CSS, one each for
+        efficiency, learnability, and safety.
+      </p>
+
+      <nav aria-label="Table of contents">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#reddit-fix">Reddit &mdash; bigger vote targets (Efficiency)</a></li>
+          <li><a href="#youtube-fix">YouTube &mdash; visible label on Dislike (Learnability)</a></li>
+          <li><a href="#wikipedia-fix">Wikipedia &mdash; prominent login/create-account links (Safety)</a></li>
+        </ol>
+      </nav>
+
+      <article id="reddit-fix">
+        <h2>1. Reddit &mdash; Bigger Vote Targets</h2>
+        <p>
+          <strong>Website &amp; page:</strong>
+          <a href="https://www.reddit.com">reddit.com</a>, any post or comment
+          thread (upvote/downvote controls).
+        </p>
+
+        <h3>The CSS</h3>
+        <pre><code>[data-action-bar-action="upvote"],
+[data-action-bar-action="downvote"] {
+  --size-button-sm-h: 40px;
+  padding: 8px;
+}
+
+[data-action-bar-action="upvote"] svg,
+[data-action-bar-action="downvote"] svg {
+  width: 22px;
+  height: 22px;
+}</code></pre>
+
+        <h3>Usability dimension(s)</h3>
+        <p>Efficiency.</p>
+
+        <h3>Why this helps</h3>
+        <p>
+          The original vote buttons render their 16px icon inside a small,
+          zero-padding square &mdash; a small, precise target for the single
+          most frequent action on the site. By Fitts's Law, the time it
+          takes to move to and click a target grows as the target shrinks,
+          so enlarging both the icon and the clickable padding around it
+          reduces the time and precision needed to vote correctly. No
+          <code>!important</code> was needed: the button's height is set
+          inline via a CSS custom property
+          (<code>style="height: var(--size-button-sm-h)"</code>), so
+          redefining that variable on the element changes what the inline
+          declaration resolves to, rather than fighting it; the SVG's
+          <code>width</code>/<code>height</code> are HTML presentation
+          attributes, which sit at the very bottom of the cascade and are
+          overridden by any CSS rule.
+        </p>
+      </article>
+
+      <article id="youtube-fix">
+        <h2>2. YouTube &mdash; Visible Label on the Dislike Button</h2>
+        <p>
+          <strong>Website &amp; page:</strong>
+          <a href="https://www.youtube.com">youtube.com</a>, any video watch
+          page (the action row under the player, next to Like/Share/Ask/Save).
+        </p>
+
+        <h3>The CSS</h3>
+        <pre><code>[aria-label="Dislike this video"] {
+  display: inline-flex;
+  align-items: center;
+  padding-right: 12px;
+}
+
+[aria-label="Dislike this video"]::after {
+  content: "Dislike";
+  margin-left: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}</code></pre>
+
+        <h3>Usability dimension(s)</h3>
+        <p>Learnability.</p>
+
+        <h3>Why this helps</h3>
+        <p>
+          Every other button in this action row carries a visible text label:
+          Like shows its running count, and Share, Ask, and Save each show
+          their own word right next to the icon. Dislike is the sole
+          exception &mdash; it renders as a bare icon with only an
+          <code>aria-label</code> for screen readers, so a sighted user has
+          to already recognize the thumbs-down convention to know what it
+          does. Adding a generated text label with <code>::after</code>
+          brings Dislike in line with its neighbors, replacing a hidden
+          affordance with an explicit <strong>signifier</strong> instead of
+          relying on the user's prior familiarity with the icon. No
+          <code>!important</code> is needed, since the button's own
+          <code>style</code> attribute is empty.
+        </p>
+       </article>
+
+      <article id="wikipedia-fix">
+        <h2>3. Wikipedia &mdash; Prominent Login / Create-Account Links</h2>
+        <p>
+          <strong>Website &amp; page:</strong>
+          <a href="https://en.wikipedia.org">en.wikipedia.org</a>, the edit
+          page for any article, reached while logged out
+          (e.g. <code>/w/index.php?title=ANY_ARTICLE&amp;action=edit</code>).
+        </p>
+
+        <h3>The CSS</h3>
+        <pre><code>.mw-anon-edit-warning a[href*="UserLogin"],
+.mw-anon-edit-warning a[href*="CreateAccount"] {
+  display: inline-block;
+  background-color: #3366cc;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 4px 4px 0 0;
+}</code></pre>
+
+        <h3>Usability dimension(s)</h3>
+        <p>Safety.</p>
+
+        <h3>Why this helps</h3>
+        <p>
+          When editing while logged out, Wikipedia now assigns a temporary
+          account and describes it only vaguely as offering
+          &ldquo;a very basic level of privacy,&rdquo; without spelling out
+          what that means. The message does give two ways to avoid that
+          tradeoff &mdash; logging in or creating an account &mdash; but both
+          are rendered as plain inline text links, visually
+          indistinguishable from the rest of the paragraph. This is a poor
+          <strong>signifier</strong>: the one actionable, protective choice
+          in the message is easy to skim right past. Styling those two links
+          as clear, high-contrast buttons increases their visual salience,
+          making the safer, more deliberate option the one that's easiest to
+          notice and act on. No <code>!important</code> is needed, since
+          neither link carries a conflicting inline <code>style</code>
+          attribute.
+        </p>
+      </article>
+    </main>
+  </body>
+</html>
